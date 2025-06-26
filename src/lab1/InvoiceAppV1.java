@@ -1,12 +1,9 @@
-package weekOne;
+package lab1;
 
-public class InvoiceApp {
-
+public class InvoiceAppV1 {
 	public static void main(String[] args) {
-		
-		
-		double subtotal = 100;
-		double discountPercent = 0.2;
+		double subtotal = 200;
+		double discountPercent = 0.1;
 		double discountAmmount = subtotal* discountPercent;
 		double total = subtotal - discountAmmount;
 		//welcome the user to the program
@@ -18,5 +15,4 @@ public class InvoiceApp {
 		System.out.println("Discount ammount: "	+ discountAmmount);
 		System.out.println("Total:		  "			+ total);
 	}
-
 }

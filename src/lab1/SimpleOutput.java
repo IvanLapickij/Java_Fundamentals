@@ -1,4 +1,4 @@
-package weekOne;
+package lab1;
 
 public class SimpleOutput {
 

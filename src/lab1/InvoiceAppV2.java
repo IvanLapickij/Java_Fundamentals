@@ -8,21 +8,18 @@ public class InvoiceAppV2 {
 		//define scanner
 		Scanner sc = new Scanner(System.in);
 				
-		//double subtotal = 200;
-		double discountPercent = 0.1;
-		double discountAmmount = subtotal* discountPercent;
-		double total = subtotal - discountAmmount;
+		
 		//welcome the user to the program
 		System.out.println("Welcome to the Invoice Total Calculator");
 		System.out.println();
 		
 		
 		
-		// display the discount ammount and total
-		System.out.println("Subtotal:	  "+subtotal);
-		System.out.println("Discount percent:   "	+ discountPercent);
-		System.out.println("Discount ammount: "	+ discountAmmount);
-		System.out.println("Total:		  "			+ total);
+		
+		int invoices = 0;
+		int countInvoicesOnDisscount = 0;
+		double AverageInvoice = 0;
+		double AverageDisscount = 0;
 		
 		
 		
@@ -30,43 +27,105 @@ public class InvoiceAppV2 {
 		// Invoice generator start of loop
 		String choice = "y";
 		while (choice.equalsIgnoreCase("y")){
-				
+			
 			//define Subtotal input
 			System.out.println("Enter subtotal: ");
 			double subtotal = sc.nextDouble();
-				//evaluate user input(Carspeed)
+			//double subtotal = 0;
+			double discountPercent = 0.1;
+			
+			
+				//evaluate user input(subtotal)
 				if(subtotal>0) {
-					if(subtotal>120) {
-						System.out.println("Over Speed Limit - Fined!");
-						System.out.println("Do you want to check another speed? (y/n): ");
-						choice = sc.next();
-					}
-					else if(120>=carSpeed && carSpeed>110) {
-						System.out.println("Over Speed Limit - Warning!");
-						System.out.println("Do you want to check another speed? (y/n): ");
-						choice = sc.next();
-						System.out.println();
-					}
-					else if(99>carSpeed && carSpeed>60) {
-						System.out.println("Normal Speed");
-						System.out.println("Do you want to check another speed? (y/n): ");
-						choice = sc.next();
-						System.out.println();
-					}
-					else if(59>carSpeed && carSpeed>30) {
-						System.out.println("Cautios Driving");
-						System.out.println("Do you want to check another speed? (y/n): ");
+					if(subtotal>=500) {
+						
+						// display the discount ammount and total
+						discountPercent=0.25;
+						double discountAmmount = subtotal* discountPercent;
+						double total = subtotal - discountAmmount;
+						System.out.println("Subtotal:	  "+subtotal);
+						System.out.println("Discount percent: "	+ discountPercent);
+						System.out.println("Discount ammount: "	+ discountAmmount);
+						System.out.println("Invoice total:	  "			+ total);
+						
+						countInvoicesOnDisscount +=1;
+						invoices += 1;
+						AverageInvoice +=total;
+						AverageDisscount += discountAmmount;
+						
+						System.out.println("Continue ? (y/n): ");
 						choice = sc.next();
 						System.out.println();
 					}
-					else if(30>carSpeed) {
-						System.out.println("Too Slow - Hazardous!");
-						System.out.println("Do you want to check another speed? (y/n): ");
+					else if(subtotal>=200) {
+						
+						discountPercent=0.2;
+						double discountAmmount = subtotal* discountPercent;
+						double total = subtotal - discountAmmount;
+						System.out.println("Subtotal:	  "+subtotal);
+						System.out.println("Discount percent: "	+ discountPercent);
+						System.out.println("Discount ammount: "	+ discountAmmount);
+						System.out.println("Invoice total:	  "			+ total);
+						
+						countInvoicesOnDisscount +=1;
+						invoices += 1;
+						AverageInvoice +=total;
+						AverageDisscount += discountAmmount;
+						
+						System.out.println("Continue ? (y/n): ");
+						choice = sc.next();
+						System.out.println();
+					}
+					else if(subtotal>=100) {
+						
+						discountPercent=0.1;
+						double discountAmmount = subtotal* discountPercent;
+						double total = subtotal - discountAmmount;
+						System.out.println("Subtotal:	  "+subtotal);
+						System.out.println("Discount percent: "	+ discountPercent);
+						System.out.println("Discount ammount: "	+ discountAmmount);
+						System.out.println("Invoice total:	  "			+ total);
+						
+						countInvoicesOnDisscount +=1;
+						invoices += 1;
+						AverageInvoice +=total;
+						AverageDisscount += discountAmmount;
+						
+						System.out.println("Continue ? (y/n): ");
+						choice = sc.next();
+						System.out.println();
+					}
+					else if(100>subtotal) {
+						
+						discountPercent=0;
+						double discountAmmount = subtotal* discountPercent;
+						double total = subtotal - discountAmmount;
+						System.out.println("Subtotal:	  "+subtotal);
+						System.out.println("Discount percent: "	+ discountPercent);
+						System.out.println("Discount ammount: "	+ discountAmmount);
+						System.out.println("Invoice total:	  "			+ total);
+						
+						
+						invoices += 1;
+						AverageInvoice +=total;
+						AverageDisscount += discountAmmount;
+						
+						System.out.println("Continue ? (y/n): ");
 						choice = sc.next();
 						System.out.println();
 					}
 				}
+				else {
+					System.out.println("Your input: " + subtotal);
+					System.out.println("Please enter valid Integer number thas is bigger than 0");
+					System.out.println("Would you like to continue ? (y/n): ");
+					choice = sc.next();
+				}
 			}
 				System.out.println("Application is closed");
+				System.out.println();
+				System.out.println("Number of invoices: " + invoices);
+				System.out.println("Average invoice: " + AverageInvoice/invoices);
+				System.out.println("Average discount: " + AverageDisscount/countInvoicesOnDisscount);
 	}
 }

@@ -1,4 +1,4 @@
-package lab1;
+package week1;
 
 public class InvoiceAppV1 {
 	public static void main(String[] args) {

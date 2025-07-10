@@ -7,23 +7,27 @@ public class StringExercises {
 	public static void main(String[] args) {
 		//Calling methods to demonstrate their functionality
 		
-		System.out.println("###stringFormattingExercise###");
-		stringFormattingExercise();
+//		System.out.println("###stringMethodsExercise###");
+//		stringMethodsExercise();
+//		
+//		System.out.println();
+//		System.out.println("###stringConstantPoolExercise###");
+//		stringConstantPoolExercise();j
+//		
+//		System.out.println();
+//		System.out.println("###stringComparisonsExercise###");
+//		stringComparisonsExercise();
 		
 		System.out.println();
-		System.out.println("###stringComparisonsExercise###");
-		stringComparisonsExercise();
+		System.out.println("###stringImmutabilityExercise###");
+		stringImmutabilityExercise();
 		
-		System.out.println();
-		System.out.println("###stringConstantPoolExercise###");
-		stringConstantPoolExercise();
-		
-		stringMethodsExercise();
 	
 	}
+	
 	/*	1 - Write a method to perform the following operations 
 	 * on a given string:	"JavaProgramming".*/
-	private static void stringFormattingExercise() {
+	private static void stringMethodsExercise() {
 		
 		String str1 = "JavaProgramming";
 		char char5 = str1.charAt(5);
@@ -51,7 +55,7 @@ public class StringExercises {
 	 * Create two strings using string literals and two strings using the new keyword
 	 * Compare them using the == operator and the equals method and print the results
 	*/
-	private static void stringComparisonsExercise() {
+	private static void stringConstantPoolExercise() {
 		
 		String str1 = "abc";
 		String str2 = "abc";
@@ -71,22 +75,24 @@ public class StringExercises {
 	 * Prompt the user to input two strings, then compare them using compareTo,
 	 * equals, and equalsIgnoreCase methods. Print the results of each comparison.
 	*/
-	private static void stringConstantPoolExercise() {
+	private static void stringComparisonsExercise() {
 		
 		boolean stringEquals = false;
 		boolean ingnoringCase = false;
 		
-		String str1 = sc.next();
+		
 		System.out.print("Enter the first string: ");
+		String str1 = sc.next();
 		System.out.println();
-		String str2 = sc.next();
+		
 		System.out.print("Enter the second string: ");
+		String str2 = sc.next();
 		
 		if(str1.equalsIgnoreCase(str2)) {
 			stringEquals=true;
-			System.out.println("The string are equal ingonirng case: " + ingnoringCase);
+			System.out.println("The string are equal ingnoring case: " + ingnoringCase);
 			}else {
-				System.out.println("The string are equal ingonirng case: " + ingnoringCase);
+				System.out.println("The string are equal ingnoring case: " + ingnoringCase);
 			}
 		if(str1.equals(str2)) {
 			stringEquals=true;
@@ -96,12 +102,32 @@ public class StringExercises {
 
 		}
 		
-		
-		//System.out.println("The first string is lexicographically less than the second string.");
+		if(str1.charAt(0)>str2.charAt(0)) {
+			System.out.println("The first string is lexicographically less than the second string.");
+		}else {
+			System.out.println("The second string is lexicographically less than the first string.");
+		}
 	}
-
-	private static void stringMethodsExercise() {
-		// TODO Auto-generated method stub
+	
+	/*
+	 * 4 - Write a method that demonstrates the immutability of strings.
+	 * Create a string and attempt to modify it by appending more text to it.
+	 * Then, print the original string to show that it hasn't changed.
+	 * Finally, assign the modified string to a new variable and print both strings.
+	 */
+	private static void stringImmutabilityExercise() {
+		
+		System.out.print("Enter the first string: ");
+		String str3 = sc.next();
+		System.out.println("Original string: " + str3);
+		System.out.println();
+		
+		System.out.print("Enter the second string: ");
+		str3 += sc.next();
+		System.out.println("Modified string: " + str3);
+		
+		System.out.println("Original string after modification attempt: " + str3);
+		
 		
 	}
 

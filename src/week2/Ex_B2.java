@@ -1,4 +1,4 @@
-package weekTwo;
+package week2;
 import java.util.Scanner;
 public class Ex_B2 {
 	static Scanner sc = new Scanner(System.in);

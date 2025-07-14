@@ -1,4 +1,4 @@
-package weekTwo;
+package week2;
 public class Ex_B1 {
 	public static void main(String[] args) {
 		

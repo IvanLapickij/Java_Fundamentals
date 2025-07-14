@@ -10,7 +10,9 @@ public class WhileLoops {
 
 		// thirdOrderPolynomial();
 		// whileAverage();
-		//whileGrades();
+		// whileGrades();
+		//whileHistogram();
+		whileLargestSmallest();
 	}
 
 	private static void thirdOrderPolynomial() {
@@ -123,5 +125,32 @@ public class WhileLoops {
 		System.out.println("Number of D's is " + d);
 		System.out.println("Number of E's is " + e);
 		System.out.println("Number of F's is " + f);
+	}
+
+	private static void whileHistogram() {
+		System.out.print("Enter number of rows --> ");
+		int rows = sc.nextInt();
+
+		System.out.print("Enter number of cols --> ");
+		int cols = sc.nextInt();
+
+		char star = '*';
+
+		String line = "";
+
+		while (rows != 0) {
+
+			while (cols != 0) {
+
+				line += star;
+				cols--;
+			}
+			System.out.println(line);
+			rows--;
+		}System.out.println("end of program");
+	}
+	
+	private static void whileLargestSmallest() {
+		
 	}
 }

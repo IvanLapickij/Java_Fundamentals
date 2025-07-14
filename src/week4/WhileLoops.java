@@ -8,9 +8,9 @@ public class WhileLoops {
 
 	public static void main(String[] args) {
 
-		//thirdOrderPolynomial();
-		//whileAverage();
-		whileGrades();
+		// thirdOrderPolynomial();
+		// whileAverage();
+		//whileGrades();
 	}
 
 	private static void thirdOrderPolynomial() {
@@ -62,53 +62,66 @@ public class WhileLoops {
 
 		int times;
 		int number;
-		int sum =0;
-		double average ;
+		int sum = 0;
+		double average;
 		System.out.println("How many numbers in the sequence ->> ");
 		times = sc.nextInt();
 		int count = times;
 		while (count != 0) {
-			
+
 			System.out.println("Please enter a number --> ");
 			number = sc.nextInt();
-			
+
 			sum += number;
 			count--;
 		}
-		average = sum/times;
+		average = sum / times;
 		System.out.println("Average is " + average);
 	}
 
 	private static void whileGrades() {
 
-		int a=0,b=0,c=0,d=0,e=0,f=0;
-		
+		int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0;
+
 		String grade;
 
 		while (true) {
-			
-			//as for user input & convert to lowercase
+
+			// as for user input & convert to lowercase
 			System.out.println("Enter the grade a-f or A-F (x/X to exit) --> ");
 			grade = sc.next().toLowerCase();
-			
-			//check for length of input 
-			if(grade.length()>1) {
+
+			// check for length of input
+			if (grade.length() > 1) {
 				System.out.println("Letter entered was not in range ! " + grade);
-				System.out.println("Enter the grade a-f or A-F (x/X to exit) --> ");
-				grade = sc.next().toLowerCase();
-				
-			//if length is one char	
-			}else if(grade.length()==1) {
-				if(grade.charAt(0)=='a') {
+
+				// if length is one char
+			} else if (grade.length() == 1) {
+				if (grade.charAt(0) == 'a') {
 					a++;
+				} else if (grade.charAt(0) == 'b') {
+					b++;
+				} else if (grade.charAt(0) == 'c') {
+					c++;
+				} else if (grade.charAt(0) == 'd') {
+					d++;
+				} else if (grade.charAt(0) == 'e') {
+					e++;
+				} else if (grade.charAt(0) == 'f') {
+					f++;
+
+				} else if (grade.charAt(0) == 'x') {
+					System.out.println("X entered, end of application");
+					break;
 				}
-			}else if(grade.charAt(0)=='x') {
-				System.out.println("X entered, end of application");
-				break;
 			}
 
-			
 		}
 		System.out.println("Number of A's is " + a);
+		System.out.println("Number of B's is " + b);
+		System.out.println("Number of C's is " + c);
+		System.out.println("Number of D's is " + d);
+		System.out.println("Number of E's is " + e);
+		System.out.println("Number of F's is " + f);
 	}
 }

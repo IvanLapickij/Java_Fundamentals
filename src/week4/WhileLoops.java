@@ -11,8 +11,11 @@ public class WhileLoops {
 		// thirdOrderPolynomial();
 		// whileAverage();
 		// whileGrades();
-		//whileHistogram();
-		whileLargestSmallest();
+		// whileHistogram();
+		// whileLargestSmallest();
+		// whileSales();
+		// whileSquare();
+		whileAverageSentinel();
 	}
 
 	private static void thirdOrderPolynomial() {
@@ -147,10 +150,105 @@ public class WhileLoops {
 			}
 			System.out.println(line);
 			rows--;
-		}System.out.println("end of program");
+		}
+		System.out.println("end of program");
 	}
-	
+
 	private static void whileLargestSmallest() {
+
+		System.out.print("Enter n --> ");
+
+		int n = sc.nextInt();
+		int largest = 0;
+		int smallest = 0;
+
+		while (n != 0) {
+
+			if (n <= 0) {
+				System.out.println("n was invalid: " + n);
+				break;
+			} else if (n > 0) {
+
+				System.out.print("Enter a number --> ");
+				int numberSequence = sc.nextInt();
+				n--;
+
+				// assing something else than 0
+				if (largest == 0 & smallest == 0) {
+					largest = numberSequence;
+					smallest = numberSequence;
+				}
+
+				if (numberSequence > largest) {
+					largest = numberSequence;
+				}
+
+				if (numberSequence < smallest) {
+					smallest = numberSequence;
+				}
+			}
+
+		}
+		if (n >= 0) { // not best approach , but doest display if n is negative
+			System.out.println("Largest is " + largest);
+			System.out.println("Smallest is " + smallest);
+		}
+
+	}
+
+	private static void whileSales() {
+
+		int enterSalary = 0;
+		System.out.print("Enter sales (-1 to end) --> ");
+		enterSalary = sc.nextInt();
+		while (enterSalary > -1) {
+
+			double salaryFormula = enterSalary + enterSalary * 0.09;
+
+			System.out.println("Salary is: " + salaryFormula);
+			System.out.print("Enter sales (-1 to end) --> ");
+			enterSalary = sc.nextInt();
+		}
+		System.out.println("entered negative ammount: " + enterSalary);
+		System.out.println("End of application");
+
+	}
+
+	private static void whileSquare() {
+
+		int n = 5;
+		int sum = 0;
+		while (n != 0) {
+
+			int number = sc.nextInt();
+			sum += Math.pow(number, 2);
+			n--;
+		}
+		System.out.println("Total is " + sum);
+	}
+
+	private static void whileAverageSentinel() {
+		double average = 0;
+		int sum = 0;
+		int count = 0;
+		int number = 0;
+		
+		System.out.print("Please enter a number (-1 to exit) --> ");
+		number = sc.nextInt();
+		if(number<-1) {
+			System.out.println("No valid numbers entered");
+		}else{
+			while (number != (-1)) {
+				
+				sum += number;
+				count += 1;
+				average = sum / count;
+				System.out.print("Please enter a number (-1 to exit) --> ");
+				number = sc.nextInt();
+			}
+			System.out.println("Avergae is " + average);
+		}
 		
 	}
+
 }

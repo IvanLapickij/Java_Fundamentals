@@ -210,28 +210,40 @@ public class ForLoops {
 	private static void twelveDaysOfChristmas() {
 		int daysOfChristmas = 12;
 		String currentDayOfChristmas = "none";
-		String song = ("On the " + currentDayOfChristmas + " day of Christmas,\r\n" + "My true love sent to me:\r\n"
+		String songStart = ("On the " + currentDayOfChristmas + " day of Christmas,\r\n" + "My true love sent to me:"
 				+ "");
+		String songContinues = "";
+
+		String firstDayGifts = "	A partridge in a pear tree.\n";
+		String secondDayGifts = "	Two turtle doves, and\n";
+		String thirddDayGifts = "	Three French hens,\n";
+
+		String songContinue = ("");
 
 		for (int i = 1; i <= daysOfChristmas; i++) {
 			switch (i) {
 			case 1:
 				currentDayOfChristmas = "first";
-				song = ("On the " + currentDayOfChristmas + " day of Christmas,\r\n" + "My true love sent to me:\r\n"
-						+ "");
-				song += "A partridge in a pear tree.";
-				System.out.println(song);
-				System.err.println("");
+				songContinues += firstDayGifts;
+				System.out.println(songStart);
+				System.out.println(songContinues);
 				break;
 			case 2:
 				currentDayOfChristmas = "second";
-				song = ("On the " + currentDayOfChristmas + " day of Christmas,\r\n" + "My true love sent to me:\r\n"
-						+ "");
-				song += "Two turtle doves, and\n" + "A partridge in a pear tree.\n" + "";
-				System.out.println(song);
-				System.err.println("");
+
+				songContinues = secondDayGifts + firstDayGifts;
+				System.out.println(songStart);
+				System.out.println(songContinues);
+				break;
+			case 3:
+				currentDayOfChristmas = "third";
+
+				songContinues =thirddDayGifts+ secondDayGifts + firstDayGifts;
+				System.out.println(songStart);
+				System.out.println(songContinues);
 				break;
 			}
+			
 		}
 		// System.out.println(song);
 	}

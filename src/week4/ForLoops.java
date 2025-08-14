@@ -7,13 +7,13 @@ public class ForLoops {
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		// forHeaderTesting();
+		forHeaderTesting();
 		// forSmallestLargest();
 		// forHistogram();
 		// forAverage();
 		// forSequence();
 		// forSumEvenNumbers();
-		twelveDaysOfChristmas();
+		//twelveDaysOfChristmas();
 	}
 
 	private static void forHeaderTesting() {

@@ -71,7 +71,7 @@ class Student {
     }
 }
 
-public class AssessmentThree2024 {
+public class AssessmentThree2024Sample {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {

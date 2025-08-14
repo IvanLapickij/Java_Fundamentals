@@ -70,7 +70,7 @@ class Dog{
 
 
 
-public class AssessmentThree {
+public class AssessmentThreeSample {
 
 	private static Scanner sc = new Scanner(System.in);
 
